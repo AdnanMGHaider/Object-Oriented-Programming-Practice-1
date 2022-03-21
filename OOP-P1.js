@@ -1,72 +1,51 @@
-const nbaPlayer1 = {
-  name: "Lebron James",
-  team: "Los Angeles Lakers",
-  height: "6 ft 8 in",
-  age: 37,
-  signatureScoringStyle: "tomahawk dunk",
+const playerFunctions = {
   score() {
-    return `${nbaPlayer1.name} scores with a ${nbaPlayer1.signatureScoringStyle}`;
-  },
-};
-const nbaPlayer2 = {
-  name: "Kevin Durant",
-  team: "Brooklyn Nets",
-  height: "6 ft 10 in",
-  age: 33,
-  signatureScoringStyle: "midrange jumper",
-  score() {
-    return `${nbaPlayer2.name} scores with a ${nbaPlayer2.signatureScoringStyle}`;
-  },
-};
-const nbaPlayer3 = {
-  name: "Stephen Curry",
-  team: "Golden State Warriors",
-  height: "6 ft 3 in",
-  age: 34,
-  signatureScoringStyle: "pull up three",
-  score() {
-    return `${nbaPlayer3.name} scores with a ${nbaPlayer3.signatureScoringStyle}`;
-  },
-};
-const nbaPlayer4 = {
-  name: "James Harden",
-  team: "Philadelphia 76ers",
-  height: "6 ft 5 in",
-  age: 32,
-  signatureScoringStyle: "step-back three ",
-  score() {
-    return `${nbaPlayer4.name} scores with a ${nbaPlayer4.signatureScoringStyle}`;
+    return `${this.name} scores with a ${this.signatureScoringStyle}`;
   },
 };
 
-console.log(nbaPlayer1);
-console.log(nbaPlayer1.name);
-console.log(nbaPlayer1.team);
-console.log(nbaPlayer1.height);
-console.log(nbaPlayer1.age);
-console.log(nbaPlayer1.signatureScoringStyle);
-console.log(nbaPlayer1.score());
+function createNBAplayer(name, team, height, age, signatureScoringStyle) {
+  let newNBAplayer = Object.create(playerFunctions);
+  newNBAplayer.name = name;
+  newNBAplayer.team = team;
+  newNBAplayer.height = height;
+  newNBAplayer.age = age;
+  newNBAplayer.signatureScoringStyle = signatureScoringStyle;
+  return newNBAplayer;
+}
 
-console.log(nbaPlayer2);
-console.log(nbaPlayer2.name);
-console.log(nbaPlayer2.team);
-console.log(nbaPlayer2.height);
-console.log(nbaPlayer2.age);
-console.log(nbaPlayer2.signatureScoringStyle);
-console.log(nbaPlayer2.score());
+const lebronJames = createNBAplayer("Lebron James", "Los Angeles Lakers", "6 ft 8 in", 37, "tomahawk dunk");
+console.log(lebronJames);
+console.log(lebronJames.name);
+console.log(lebronJames.team);
+console.log(lebronJames.height);
+console.log(lebronJames.age);
+console.log(lebronJames.signatureScoringStyle);
+console.log(lebronJames.score());
 
-console.log(nbaPlayer3);
-console.log(nbaPlayer3.name);
-console.log(nbaPlayer3.team);
-console.log(nbaPlayer3.height);
-console.log(nbaPlayer3.age);
-console.log(nbaPlayer3.signatureScoringStyle);
-console.log(nbaPlayer3.score());
+const kevinDurant = createNBAplayer("Kevin Durant", "Brooklyn Nets", "6 ft 10 in", 33, "midrange jumper");
+console.log(kevinDurant);
+console.log(kevinDurant.name);
+console.log(kevinDurant.team);
+console.log(kevinDurant.height);
+console.log(kevinDurant.age);
+console.log(kevinDurant.signatureScoringStyle);
+console.log(kevinDurant.score());
 
-console.log(nbaPlayer4);
-console.log(nbaPlayer4.name);
-console.log(nbaPlayer4.team);
-console.log(nbaPlayer4.height);
-console.log(nbaPlayer4.age);
-console.log(nbaPlayer4.signatureScoringStyle);
-console.log(nbaPlayer4.score());
+const stephenCurry = createNBAplayer("Stephen Curry", "Golden State Warriors", "6 ft 3 in", 34, "pull up three");
+console.log(stephenCurry);
+console.log(stephenCurry.name);
+console.log(stephenCurry.team);
+console.log(stephenCurry.height);
+console.log(stephenCurry.age);
+console.log(stephenCurry.signatureScoringStyle);
+console.log(stephenCurry.score());
+
+const jamesHarden = createNBAplayer("James Harden", "Philadelphia 76ers", "6 ft 5 in", 32, "step-back three");
+console.log(jamesHarden);
+console.log(jamesHarden.name);
+console.log(jamesHarden.team);
+console.log(jamesHarden.height);
+console.log(jamesHarden.age);
+console.log(jamesHarden.signatureScoringStyle);
+console.log(jamesHarden.score());
